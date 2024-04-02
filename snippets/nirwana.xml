@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- GitHub -->
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <!-- Gitlab -->
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+
+  <!-- ProjectNirwana -->
+  <remote  name="nirwana"
+           fetch="https://github.com/ProjectNirwana"
+           revision="fourteen" />
+
+  <!-- Remote Device -->
+  <project path="device/nirwana/sepolicy" name="device_nirwana_sepolicy" revision="fourteen" remote="nirwana" />
+  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" revision="fourteen" remote="nirwana" />
+
+  <!-- Remote Frameworks  -->
+  <project path="frameworks/av" name="frameworks_av" remote="nirwana" />
+  <project path="frameworks/base" name="frameworks_base" remote="nirwana" />
+  <project path="frameworks/native" name="frameworks_native" remote="nirwana" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="nirwana" />
+
+  <!-- Remote General repos -->
+  <project path="art" name="art" remote="nirwana" />
+  <project path="bionic" name="bionic" remote="nirwana" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="nirwana" />
+  <project path="build/make" name="build_make" remote="nirwana" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="nirwana" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="manifest" name="manifest" remote="nirwana" />
+  <project path="platform_testing" name="platform_testing" revision="fourteen" remote="nirwana" />
+
+  <!-- Remote Hardware -->
+  <project path="hardware/nirwana/interfaces" name="hardware_nirwana_interfaces" remote="nirwana" />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="nirwana" />
+  <project path="hardware/qcom-caf/wlan" name="hardware_qcom-caf_wlan" revision="fourteen" remote="nirwana" />
+  <project path="hardware/qcom-caf/common" name="hardware_qcom-caf_common" groups="qcom" revision="fourteen" remote="nirwana" >
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/msm8953/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8953/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8450/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8450/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8450/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8550/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8550/Android.mk" />
+    <!-- add guards for Pixel kernel modules -->
+    <linkfile src="os_pickup.bp" dest="kernel/google/gs201/private/google-modules/Android.bp" />
+  </project>
+
+  <!-- Remote Packages -->
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="nirwana" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="nirwana" />
+
+  <!-- Remote Packages Modules -->
+  <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" remote="nirwana" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" revision="fourteen" remote="nirwana" />
+  <project path="packages/modules/Permission" name="packages_modules_Permission" remote="nirwana" />
+  <project path="packages/modules/Wifi" name="packages_modules_Wifi" remote="nirwana" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="nirwana" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="nirwana" />
+
+  <!-- Remote System -->
+  <project path="system/core" name="system_core" remote="nirwana" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="nirwana" />
+  <project path="system/update_engine" name="system_update_engine" remote="nirwana" />
+
+  <!-- Remote Vendor -->
+  <project path="vendor/nirwana" name="vendor_nirwana" revision="fourteen" remote="nirwana" />
+  <project path="vendor/qcom/opensource/vibrator" name="vendor_qcom_opensource_vibrator" revision="fourteen" remote="nirwana" />
+</manifest>
