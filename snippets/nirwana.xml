@@ -11,7 +11,7 @@
 
   <!-- ProjectNirwana -->
   <remote  name="nirwana"
-           fetch="https://github.com/ProjectNirwana"
+           fetch="git@github.com:ProjectNirwana"
            revision="fourteen" />
 
   <!-- Remote Device -->
