@@ -14,6 +14,11 @@
            fetch="git@github.com:ProjectNirwana"
            revision="fourteen" />
 
+  <!-- ProjectNirwana -->
+  <remote  name="nirwana-gitlab"
+           fetch="git@gitlab.com:project-nirwana"
+           revision="fourteen" />
+
   <!-- Remote Device -->
   <project path="device/nirwana/sepolicy" name="device_nirwana_sepolicy" revision="fourteen" remote="nirwana" />
 
@@ -53,14 +58,14 @@
 
   <!-- Remote Packages Modules -->
   <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" remote="nirwana" />
-  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" revision="fourteen" remote="nirwana" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" revision="14" remote="nirwana-gitlab" />
   <project path="packages/modules/Permission" name="packages_modules_Permission" remote="nirwana" />
   <project path="packages/modules/Wifi" name="packages_modules_Wifi" remote="nirwana" />
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="nirwana" />
   <project path="packages/services/Telephony" name="packages_services_Telephony" remote="nirwana" />
 
   <!-- Remote System -->
-  <project path="system/core" name="system_core" remote="nirwana" />
+  <project path="system/core" name="system_core" remote="nirwana-gitlab" revision="fourteen" />
   <project path="system/sepolicy" name="system_sepolicy" remote="nirwana" />
   <project path="system/update_engine" name="system_update_engine" remote="nirwana" />
 
