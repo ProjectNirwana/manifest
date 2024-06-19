@@ -6,7 +6,7 @@ To get started with ProjectNirwana, you'll need to get familiar with [Repo](http
 To initialize your local repository, use a command like this:
 
 ```bash
-repo init --depth=1 -u https://github.com/ProjectNirwana/manifest -b fourteen --git-lfs
+repo init --depth=1 -u git@github.com:ProjectNirwana/manifest.git -b fourteen --git-lfs
 ```
 
 Then to sync up:
