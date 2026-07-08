@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="nirwana" fetch="https://github.com/ProjectNirwana" revision="sixteen" sync-c="true" />
+
+  <remove-project name="platform/frameworks/av" />
+  <project path="frameworks/av" name="frameworks_av" remote="nirwana" groups="pdk,sysui-studio" />
+
+  <remove-project name="platform/frameworks/base" />
+  <project path="frameworks/base" name="frameworks_base" remote="nirwana" groups="pdk-cw-fs,pdk-fs,sysui-studio" clone-depth="1" />
+
+  <remove-project name="platform/frameworks/libs/systemui" />
+  <project path="frameworks/libs/systemui" name="frameworks_libs_systemui" remote="nirwana" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
+
+  <remove-project name="platform/frameworks/native" />
+  <project path="frameworks/native" name="frameworks_native" remote="nirwana" groups="pdk,sysui-studio" />
+
+  <remove-project name="platform/frameworks/opt/telephony" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="nirwana" groups="pdk,sysui-studio" />
+
+  <remove-project name="platform/packages/apps/Camera2" />
+  <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="nirwana" groups="pdk-fs" />
+
+  <remove-project name="platform/packages/apps/Launcher3" />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="nirwana" groups="pdk-fs,sysui-studio,pdk-cw-tvc" />
+
+  <remove-project name="platform/packages/apps/Settings" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="nirwana" groups="pdk-fs,pdk-cw-tvc,sysui-studio" clone-depth="1" />
+
+  <remove-project name="platform/packages/apps/ThemePicker" />
+  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="nirwana" groups="pdk-fs,sysui-studio" />
+
+  <remove-project name="platform/packages/apps/WallpaperPicker2" />
+  <project path="packages/apps/WallpaperPicker2" name="packages_apps_WallpaperPicker2" remote="nirwana" groups="pdk-fs,sysui-studio" />
+
+  <remove-project name="platform/system/sepolicy" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="nirwana" groups="pdk" />
+</manifest>

@@ -2,7 +2,7 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
   <default revision="android17-release"
            remote="aosp"
@@ -1119,4 +1119,5 @@
   </project>
   <!-- END open-source projects -->
 
+  <include name="snippets/nirwana.xml" />
 </manifest>
